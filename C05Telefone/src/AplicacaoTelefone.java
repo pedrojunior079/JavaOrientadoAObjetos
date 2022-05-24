@@ -2,19 +2,21 @@
 public class AplicacaoTelefone {
    
 	public static void main(String[] args) {
-		Telefone telefone;
-		telefone = new Telefone();
-		   
-		telefone.setModelo("FPS02");
-		telefone.setNumero("9988-7766");
-		telefone.setCustoMinuto(1.50);
-		telefone.setCreditoInicial(15.00);
-		  
-		System.out.println("Modelo..............:" + telefone.getModelo());
-		System.out.println("Núnero..............:" + telefone.getNumero());
-		System.out.println("Custo Miniuto.......:" + telefone.getCustoMinuto());
-		System.out.println("Crédito Inicial....:" + telefone.getCreditoInicial());
+		
+		Operadora operadora = new Operadora("TLfonia");
+		Plano planoFilhoQuerido = new Plano("Filho querido", 0.50, 20, operadora);
+		System.out.println("Operadora do plano FILHO QUERIDO é : " + 
+		  planoFilhoQuerido.getOperadora().getNome());
+		
+		operadora.setNome("Fale mais e pague mais Telecom");
+		System.out.println("Operadora do plano FILHO QUERIDO é : " + 
+		   planoFilhoQuerido.getOperadora().getNome());
+		
+		Plano planoPaiExecutivo = new Plano("Pai Executivo", 0.40, 40,
+				new Operadora("TLFonia"));
+		
+		System.out.println("Operadora do plano PAI EXECUTIVO é : " +
+		    planoPaiExecutivo.getOperadora().getNome());
+		
 	}
-	
-	
 }
