@@ -6,16 +6,21 @@ public class Plano {
    private int creditoInicial;
    private Operadora operadora;
 
-   public Plano(String nome, Operadora operadora) {
-	this.nome = nome;
-	this.operadora = operadora;
+   public Plano(String nome) {
+	 this.nome = nome;
    }
    
-   public Plano(String nome, double custoMinuto, int creditoInicial, Operadora operadora) {
+   public Plano(String nome, double custoMinuto, int creditoInicial) {
 	   this.nome = nome;
 	   this.custoMinuto = custoMinuto;
 	   this.creditoInicial = creditoInicial;
-	   this.operadora = operadora;
+   }
+   
+   public Plano(Plano plano) {
+	   this.creditoInicial = plano.creditoInicial;
+	   this.custoMinuto = plano.custoMinuto;
+	   this.nome = plano.nome;
+	   this.operadora = plano.operadora;
    }
    
    public int getCreditoInicial() {
