@@ -7,10 +7,19 @@ import livro.iu.Console;
 public class Operadora {
    private String nome;
    private ArrayList<Plano> planos;
+   private ArrayList<Cliente> clientes;
    
    public Operadora(String nome) {
 	   planos = new ArrayList<Plano>();
 	   this.nome = nome;
+   }
+   
+   public boolean removeCliente(Cliente cliente) {
+	   boolean result;
+	   result = clientes.remove(cliente);
+	   if(result && cliente.getOperadoras().contains(this))
+		   cliente.removeOperadora(this);
+	   return result;
    }
    
    public ArrayList<Plano>getPlanos(){
@@ -27,6 +36,18 @@ public class Operadora {
    
    public void adicionaPlano(Plano plano) {
 	   planos.add(plano);
+   }
+   
+   public void adicionaCliente(Cliente cliente) {
+	   if(!clientes.contains(cliente))
+		   clientes.add(cliente);
+	   
+	   if(!cliente.getOperadoras().contains(this))
+		   cliente.adicionaOperadora(this);
+   }
+   
+   public ArrayList<Cliente>getClientes(){
+	   return clientes;
    }
    
    public void exibePlanos() {
