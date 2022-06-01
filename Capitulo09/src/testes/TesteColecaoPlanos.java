@@ -7,7 +7,7 @@ import livro.telefone.beans.Plano;
 
 public class TesteColecaoPlanos {
    public static void main(String[] args) {
-	   Operadora fps = new Operadora("FPS");
+	   /*Operadora fps = new Operadora("FPS");
        fps.adicionaPlano(new Plano("FPS30"));
        fps.adicionaPlano(new Plano("FPS50", 0.50, 20));
        
@@ -15,8 +15,8 @@ public class TesteColecaoPlanos {
        fpm.adicionaPlano(new Plano("FPM30"));
        fpm.adicionaPlano(new Plano("FPM50", 0.50, 20));
        
-       Cliente everton = new Cliente("99750861", "Everton Coimbra de Araujo", "Motorola");
-       Cliente ana = new Cliente("99750862", "Ana Lucia", "LG");
+       Cliente everton = new Cliente("99750861", "Everton Coimbra de Araujo", "Motorola", null);
+       Cliente ana = new Cliente("99750862", "Ana Lucia", "LG", null);
        
        fps.adicionaCliente(everton);
        fps.adicionaCliente(ana);
@@ -42,5 +42,6 @@ public class TesteColecaoPlanos {
        for(Operadora operadora : everton.getOperadoras()) {
     	   Console.exibeLn(operadora.getNome());
        }
+       */
    }
 }
